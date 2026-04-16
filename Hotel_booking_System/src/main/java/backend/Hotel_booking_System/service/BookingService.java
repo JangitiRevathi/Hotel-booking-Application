@@ -1,6 +1,11 @@
 package backend.Hotel_booking_System.service;
 
+
 import backend.Hotel_booking_System.service.EmailService;
+
+
+import backend.Hotel_booking_System.model.Booking;
+import backend.Hotel_booking_System.repository.BookingRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +27,10 @@ public class BookingService {
         logger.info("Processing new booking for User: {}", booking.getUser().getUsername());
         
         // Final sanity check for availability could go here
-        
+
+
+        // Final sanity check for availability could go here
+
         booking.setStatus("CONFIRMED");
         Booking savedBooking = bookingRepository.save(booking);
         logger.info("Booking successful! Booking ID: {}", savedBooking.getId());
@@ -45,7 +53,7 @@ public class BookingService {
         logger.info("Attempting to cancel Booking ID: {}", bookingId);
         Booking booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new RuntimeException("Booking not found"));
-        
+
         booking.setStatus("CANCELLED");
         bookingRepository.save(booking);
         logger.info("Booking ID: {} has been cancelled.", bookingId);
@@ -64,4 +72,8 @@ public class BookingService {
     public List<Booking> getBookingHistory(Long userId) {
         return bookingRepository.findByUser_Id(userId);
     }
+
 }
+
+}
+
