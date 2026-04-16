@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference; // To prevent infinite loops in JSON
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "hotels")
@@ -23,6 +23,6 @@ public class Hotel {
     private String description;
 
     @OneToMany(mappedBy = "hotel")
-    @com.fasterxml.jackson.annotation.JsonIgnore // <--- NUCLEAR FIX: Completely hides rooms list to prevent loops
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<Room> rooms;
 }

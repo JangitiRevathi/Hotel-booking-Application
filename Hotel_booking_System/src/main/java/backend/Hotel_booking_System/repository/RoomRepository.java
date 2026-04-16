@@ -1,4 +1,8 @@
 package backend.Hotel_booking_System.repository;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 15e776cc0b35aff375187a4598d9380bbe126f7b
 
 import java.util.List;
 
