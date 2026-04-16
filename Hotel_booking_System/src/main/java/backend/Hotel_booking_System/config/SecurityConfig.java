@@ -1,8 +1,8 @@
-package com.example.letsgo.config;
+package backend.Hotel_booking_System.config;
 
-import com.example.letsgo.security.jwt.AuthEntryPointJwt;
-import com.example.letsgo.security.jwt.AuthTokenFilter;
-import com.example.letsgo.security.services.UserDetailsServiceImpl;
+import backend.Hotel_booking_System.security.jwt.AuthEntryPointJwt;
+import backend.Hotel_booking_System.security.jwt.AuthTokenFilter;
+import backend.Hotel_booking_System.security.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
