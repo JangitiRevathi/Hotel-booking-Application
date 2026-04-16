@@ -1,4 +1,4 @@
-package backend.Hotel_booking_System.letsgo.exception;
+package backend.Hotel_booking_System.exception;
 
 import java.time.LocalDateTime;
 
