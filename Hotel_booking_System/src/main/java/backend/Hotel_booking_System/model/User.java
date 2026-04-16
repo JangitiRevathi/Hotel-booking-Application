@@ -1,11 +1,6 @@
-package backend.Hotel_booking_System.service;
+package com.example.letsgo.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -24,5 +19,5 @@ public class User {
     private String password;
 
     private String email;
-    private String role; 
+    private String role;
 }

@@ -1,8 +1,8 @@
-package backend.Hotel_booking_System.repository;
+package com.example.letsgo.repository;
 
+import com.example.letsgo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import backend.Hotel_booking_System.service.User;
+import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
 }
