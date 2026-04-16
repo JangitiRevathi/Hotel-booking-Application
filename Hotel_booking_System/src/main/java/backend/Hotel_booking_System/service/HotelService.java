@@ -1,7 +1,6 @@
 package backend.Hotel_booking_System.service;
 
 import backend.Hotel_booking_System.model.Hotel;
-import backend.Hotel_booking_System.model.Room;
 import backend.Hotel_booking_System.repository.BookingRepository;
 import backend.Hotel_booking_System.repository.HotelRepository;
 import org.slf4j.Logger;

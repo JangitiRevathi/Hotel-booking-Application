@@ -22,6 +22,14 @@ public class BookingService {
     public Booking createBooking(Booking booking) {
         logger.info("Processing new booking for User: {}", booking.getUser().getUsername());
 
+
+
+        // Final sanity check for availability could go here
+
+
+        // Final sanity check for availability could go here
+
+
         booking.setStatus("CONFIRMED");
         Booking savedBooking = bookingRepository.save(booking);
         logger.info("Booking successful! Booking ID: {}", savedBooking.getId());
@@ -62,4 +70,5 @@ public class BookingService {
         return bookingRepository.findByUser_Id(userId);
     }
 }
+
 
