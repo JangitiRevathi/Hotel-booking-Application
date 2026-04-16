@@ -1,4 +1,4 @@
-package com.example.letsgo.payload.response;
+package backend.Hotel_booking_System.payload.response;
 
 public class MessageResponse {
     private String message;

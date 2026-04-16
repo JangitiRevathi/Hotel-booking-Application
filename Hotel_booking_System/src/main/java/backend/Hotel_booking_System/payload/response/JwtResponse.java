@@ -1,9 +1,4 @@
-package backend.Hotel_booking_System.model.payload.response;
-
-public class JwtResponse {
-    
-}
-package com.example.letsgo.payload.response;
+package backend.Hotel_booking_System.payload.response;
 
 import java.util.List;
 
