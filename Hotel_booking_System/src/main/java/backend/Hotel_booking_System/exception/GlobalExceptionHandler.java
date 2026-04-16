@@ -1,4 +1,4 @@
-package com.example.letsgo.exception;
+package backend.Hotel_booking_System.exception;
 
 import java.time.LocalDateTime;
 
@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-@ControllerAdvice // This tells Spring to watch all controllers for errors
+@ControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Handles specific errors, like when a user is not found
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex, WebRequest request) {
         ErrorResponse errorDetails = new ErrorResponse(

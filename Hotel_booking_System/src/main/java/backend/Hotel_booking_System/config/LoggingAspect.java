@@ -1,4 +1,4 @@
-package com.example.letsgo.config;
+package backend.Hotel_booking_System.config;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -17,27 +17,16 @@ public class LoggingAspect {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    /**
-     * Pointcut that matches all repositories, services and Web REST endpoints.
-     */
     @Pointcut("within(@org.springframework.web.bind.annotation.RestController *)" +
             " || within(@org.springframework.stereotype.Service *)" +
             " || within(@org.springframework.stereotype.Repository *)")
     public void springBeanPointcut() {
-        // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
 
-    /**
-     * Pointcut that matches all Beans in the application's main packages.
-     */
-    @Pointcut("within(com.example.letsgo..*)")
+    @Pointcut("within(backend.Hotel_booking_System..*)")
     public void applicationPackagePointcut() {
-        // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }
 
-    /**
-     * Advice that logs when a method is entered and exited.
-     */
     @Around("applicationPackagePointcut() && springBeanPointcut()")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         if (logger.isDebugEnabled()) {
@@ -58,9 +47,6 @@ public class LoggingAspect {
         }
     }
 
-    /**
-     * Log API requests (specifically for Controllers).
-     */
     @Before("within(@org.springframework.web.bind.annotation.RestController *)")
     public void logApiRequest(JoinPoint joinPoint) {
         logger.info("API REQUEST: {}.{}() | Arguments: {}",

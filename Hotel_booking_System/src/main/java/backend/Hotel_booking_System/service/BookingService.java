@@ -1,9 +1,5 @@
 package backend.Hotel_booking_System.service;
 
-
-import backend.Hotel_booking_System.service.EmailService;
-
-
 import backend.Hotel_booking_System.model.Booking;
 import backend.Hotel_booking_System.repository.BookingRepository;
 import org.slf4j.Logger;
@@ -25,17 +21,11 @@ public class BookingService {
 
     public Booking createBooking(Booking booking) {
         logger.info("Processing new booking for User: {}", booking.getUser().getUsername());
-        
-        // Final sanity check for availability could go here
-
-
-        // Final sanity check for availability could go here
 
         booking.setStatus("CONFIRMED");
         Booking savedBooking = bookingRepository.save(booking);
         logger.info("Booking successful! Booking ID: {}", savedBooking.getId());
 
-        // Send confirmation email
         if (savedBooking.getUser().getEmail() != null) {
             emailService.sendBookingConfirmation(
                     savedBooking.getUser().getEmail(),
@@ -58,7 +48,6 @@ public class BookingService {
         bookingRepository.save(booking);
         logger.info("Booking ID: {} has been cancelled.", bookingId);
 
-        // Send cancellation email
         if (booking.getUser().getEmail() != null) {
             emailService.sendCancellationNotice(
                     booking.getUser().getEmail(),
@@ -72,8 +61,5 @@ public class BookingService {
     public List<Booking> getBookingHistory(Long userId) {
         return bookingRepository.findByUser_Id(userId);
     }
-
-}
-
 }
 

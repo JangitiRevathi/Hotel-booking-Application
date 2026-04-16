@@ -1,4 +1,4 @@
-package com.example.letsgo.config;
+package backend.Hotel_booking_System.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -12,7 +12,7 @@ public class SwaggerConfig {
     public OpenAPI hotelBookingOpenAPI() {
         return new OpenAPI()
                 .info(new Info().title("Hotel Booking API")
-                        .description("API documentation for the LetsGo Hotel Booking Application")
+                        .description("API documentation for the Hotel Booking application")
                         .version("1.0"));
     }
 }

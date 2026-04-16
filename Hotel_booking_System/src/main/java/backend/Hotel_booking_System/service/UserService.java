@@ -1,7 +1,7 @@
-package com.example.letsgo.service;
+package backend.Hotel_booking_System.service;
 
-import com.example.letsgo.model.User;
-import com.example.letsgo.repository.UserRepository;
+import backend.Hotel_booking_System.model.User;
+import backend.Hotel_booking_System.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,6 @@ public class UserService {
         User savedUser = userRepository.save(user);
         logger.info("User {} successfully registered.", savedUser.getUsername());
 
-        // Send confirmation email
         if (savedUser.getEmail() != null) {
             emailService.sendRegistrationSuccess(savedUser.getEmail(), savedUser.getUsername());
         }

@@ -1,4 +1,4 @@
-package com.example.letsgo.model;
+package backend.Hotel_booking_System.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -16,7 +16,7 @@ public class Room {
     private Double pricePerNight;
     private Boolean isAvailable;
 
-    @ManyToOne(fetch = FetchType.EAGER) // Grab the hotel details immediately
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hotel_id", columnDefinition = "BIGINT")
-    private Hotel hotel; 
+    private Hotel hotel;
 }
