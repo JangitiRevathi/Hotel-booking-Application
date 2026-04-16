@@ -1,11 +1,9 @@
-
 package backend.Hotel_booking_System.service;
 
 import backend.Hotel_booking_System.model.Hotel;
 import backend.Hotel_booking_System.model.Room;
 import backend.Hotel_booking_System.repository.BookingRepository;
 import backend.Hotel_booking_System.repository.HotelRepository;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,18 +27,13 @@ public class HotelService {
     public List<Hotel> searchHotels(String location, LocalDate checkIn, LocalDate checkOut) {
         logger.info("Searching for hotels in location: {} from {} to {}", location, checkIn, checkOut);
 
-        List<Hotel> hotels = hotelRepository.findByLocationContaining(location);
+        List<Hotel> allInLocation = hotelRepository.findByLocationContaining(location);
+
         if (checkIn == null || checkOut == null) {
-            return hotels;
+            return allInLocation;
         }
 
-
-        return hotels.stream()
-                .filter(hotel -> hotel.getRooms() != null && hotel.getRooms().stream().anyMatch(room ->
-                        bookingRepository.findOverlappingBookings(room.getId(), checkIn, checkOut).isEmpty()
-                ))
-                .collect(Collectors.toList())
-
+        // Filter hotels that have at least one room available during the specified period
         return allInLocation.stream().filter(hotel -> {
             List<Room> rooms = hotel.getRooms();
             if (rooms == null || rooms.isEmpty()) return false;
@@ -53,17 +46,11 @@ public class HotelService {
 
     public List<Hotel> searchHotelsByLocation(String location) {
         return hotelRepository.findByLocationContaining(location);
-
     }
 
     public Hotel getHotelById(Long id) {
         logger.info("Fetching details for hotel ID: {}", id);
-
-        return hotelRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Hotel not found with id: " + id));
-
         return hotelRepository.findById(id).orElseThrow(() ->
                 new RuntimeException("Hotel not found with id: " + id));
-
     }
 }

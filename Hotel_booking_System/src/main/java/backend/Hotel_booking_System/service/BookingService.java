@@ -1,4 +1,4 @@
-package com.backend.Hotel_booking_System.service;
+package backend.Hotel_booking_System.service;
 
 import backend.Hotel_booking_System.model.Booking;
 import backend.Hotel_booking_System.repository.BookingRepository;
