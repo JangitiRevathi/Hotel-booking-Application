@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.letsgo.model;
 
 import jakarta.persistence.*;
@@ -21,3 +22,9 @@ public class User {
     private String email;
     private String role;
 }
+=======
+package backend.Hotel_booking_System.model;
+
+public class User {
+}
+>>>>>>> a59c5c2e929b6fae6b65d3404aa019396b886495
