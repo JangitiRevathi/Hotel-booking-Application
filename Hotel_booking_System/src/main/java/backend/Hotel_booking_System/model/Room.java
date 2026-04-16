@@ -1,5 +1,6 @@
 package backend.Hotel_booking_System.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,7 +17,8 @@ public class Room {
     private Double pricePerNight;
     private Boolean isAvailable;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id", columnDefinition = "BIGINT")
+    @JsonBackReference
     private Hotel hotel;
 }

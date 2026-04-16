@@ -1,12 +1,9 @@
 package backend.Hotel_booking_System.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "hotels")
@@ -22,7 +19,7 @@ public class Hotel {
     @Column(length = 1000)
     private String description;
 
-    @OneToMany(mappedBy = "hotel")
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Room> rooms;
 }
