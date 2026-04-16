@@ -1,5 +1,5 @@
-package backend.Hotel_booking_System.letsgo.repository;
-package backend.Hotel_booking_System.letsgo.repository;
+package backend.Hotel_booking_System.repository;
+package backend.Hotel_booking_System.repository;
 
 import java.util.List;
 
