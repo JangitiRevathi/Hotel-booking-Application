@@ -1,4 +1,4 @@
-package com.example.letsgo.config;
+package backend.Hotel_booking_System.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

@@ -1,4 +1,4 @@
-package com.example.letsgo.config;
+package backend.Hotel_booking_System.config;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

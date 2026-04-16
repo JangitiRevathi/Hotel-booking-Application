@@ -1,4 +1,4 @@
-package com.example.letsgo.model;
+package backend.Hotel_booking_System.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

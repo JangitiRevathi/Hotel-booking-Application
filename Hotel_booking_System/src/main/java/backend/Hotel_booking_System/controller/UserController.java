@@ -1,12 +1,12 @@
-package com.example.letsgo.controller;
+package backend.Hotel_booking_System.controller;
 
-import com.example.letsgo.model.User;
-import com.example.letsgo.payload.response.JwtResponse;
-import com.example.letsgo.payload.response.MessageResponse;
-import com.example.letsgo.repository.UserRepository;
-import com.example.letsgo.security.jwt.JwtUtils;
-import com.example.letsgo.security.services.UserDetailsImpl;
-import com.example.letsgo.service.UserService;
+import backend.Hotel_booking_System.model.User;
+import backend.Hotel_booking_System.payload.response.JwtResponse;
+import backend.Hotel_booking_System.payload.response.MessageResponse;
+import backend.Hotel_booking_System.repository.UserRepository;
+import backend.Hotel_booking_System.security.jwt.JwtUtils;
+import backend.Hotel_booking_System.security.services.UserDetailsImpl;
+import backend.Hotel_booking_System.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

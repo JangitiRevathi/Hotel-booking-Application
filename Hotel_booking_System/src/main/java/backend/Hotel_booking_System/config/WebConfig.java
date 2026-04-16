@@ -1,4 +1,4 @@
-package com.example.letsgo.config;
+package backend.Hotel_booking_System.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
