@@ -25,6 +25,7 @@ public class HotelController {
     public ResponseEntity<Hotel> getHotelById(@PathVariable Long id) {
         return ResponseEntity.ok(hotelService.getHotelById(id));
     }
+<<<<<<< HEAD
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
@@ -39,3 +40,6 @@ public class HotelController {
         return ResponseEntity.ok("Deleted ok");
     }
 }
+=======
+}
+>>>>>>> 1e41a53871b6e66513743b0263b92c27e608de37
