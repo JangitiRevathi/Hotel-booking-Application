@@ -1,4 +1,4 @@
-package backend.Hotel_booking_System.service;
+package com.backend.Hotel_booking_System.service;
 
 import backend.Hotel_booking_System.model.Booking;
 import backend.Hotel_booking_System.repository.BookingRepository;
@@ -21,6 +21,14 @@ public class BookingService {
 
     public Booking createBooking(Booking booking) {
         logger.info("Processing new booking for User: {}", booking.getUser().getUsername());
+
+
+
+        // Final sanity check for availability could go here
+
+
+        // Final sanity check for availability could go here
+
 
         booking.setStatus("CONFIRMED");
         Booking savedBooking = bookingRepository.save(booking);
@@ -62,4 +70,5 @@ public class BookingService {
         return bookingRepository.findByUser_Id(userId);
     }
 }
+
 

@@ -1,18 +1,11 @@
-<<<<<<< HEAD
+
 package backend.Hotel_booking_System.service;
 
 import backend.Hotel_booking_System.model.Hotel;
 import backend.Hotel_booking_System.model.Room;
 import backend.Hotel_booking_System.repository.BookingRepository;
 import backend.Hotel_booking_System.repository.HotelRepository;
-=======
-package com.backend.Hotel_booking_System.service;
 
-import com.backend.Hotel_booking_System.model.Hotel;
-import com.backend.Hotel_booking_System.model.Room;
-import com.backend.Hotel_booking_System.repository.BookingRepository;
-import com.backend.Hotel_booking_System.repository.HotelRepository;
->>>>>>> 15e776cc0b35aff375187a4598d9380bbe126f7b
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,13 +34,12 @@ public class HotelService {
             return hotels;
         }
 
-<<<<<<< HEAD
+
         return hotels.stream()
                 .filter(hotel -> hotel.getRooms() != null && hotel.getRooms().stream().anyMatch(room ->
                         bookingRepository.findOverlappingBookings(room.getId(), checkIn, checkOut).isEmpty()
                 ))
-                .collect(Collectors.toList());
-=======
+                .collect(Collectors.toList())
 
         return allInLocation.stream().filter(hotel -> {
             List<Room> rooms = hotel.getRooms();
@@ -61,17 +53,17 @@ public class HotelService {
 
     public List<Hotel> searchHotelsByLocation(String location) {
         return hotelRepository.findByLocationContaining(location);
->>>>>>> 15e776cc0b35aff375187a4598d9380bbe126f7b
+
     }
 
     public Hotel getHotelById(Long id) {
         logger.info("Fetching details for hotel ID: {}", id);
-<<<<<<< HEAD
+
         return hotelRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Hotel not found with id: " + id));
-=======
+
         return hotelRepository.findById(id).orElseThrow(() ->
                 new RuntimeException("Hotel not found with id: " + id));
->>>>>>> 15e776cc0b35aff375187a4598d9380bbe126f7b
+
     }
 }
